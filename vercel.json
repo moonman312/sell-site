@@ -8,10 +8,10 @@
       "has": [
         {
           "type": "host",
-          "value": "sellahotel.us"
+          "value": "hotelsforsales.com"
         }
       ],
-      "destination": "https://hotelsforsales.com/$1",
+      "destination": "https://sellahotel.us/$1",
       "permanent": true
     },
     {
@@ -22,7 +22,7 @@
           "value": "hotel-selling.com"
         }
       ],
-      "destination": "https://hotelsforsales.com/$1",
+      "destination": "https://sellahotel.us/$1",
       "permanent": true
     }
   ],

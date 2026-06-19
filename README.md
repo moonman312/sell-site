@@ -1,6 +1,6 @@
 # Sell A Hotel
 
-Audience-specific landing site for **hotelsforsales.com**, bundling the Hotel Capital Stack diagnostic. Static — no build step.
+Audience-specific landing site for **sellahotel.us**, bundling the Hotel Capital Stack diagnostic. Static — no build step.
 
 ## Files
 - index.html — the landing page
@@ -22,8 +22,8 @@ vercel && vercel --prod
 ```
 
 ## Domains for this project (add in Vercel → Settings → Domains)
-- Primary: **hotelsforsales.com**
-- sellahotel.us → set to **Redirect to** hotelsforsales.com
-- hotel-selling.com → set to **Redirect to** hotelsforsales.com
+- Primary: **sellahotel.us**
+- sellahotel.us → set to **Redirect to** sellahotel.us
+- hotel-selling.com → set to **Redirect to** sellahotel.us
 
 Point each domain's nameservers (GoDaddy) to Vercel, or add an apex A record `@ -> 76.76.21.21`.
