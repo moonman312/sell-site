@@ -7,6 +7,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'><rect%20x='7'%20y='5'%20width='18'%20height='23'%20rx='1.5'%20fill='none'%20stroke='%231f8a8a'%20stroke-width='2'/><line%20x1='4.5'%20y1='28'%20x2='27.5'%20y2='28'%20stroke='%231f8a8a'%20stroke-width='2'%20stroke-linecap='round'/><text%20x='16'%20y='22.5'%20text-anchor='middle'%20font-family='Georgia,serif'%20font-weight='bold'%20font-size='15'%20fill='%231f8a8a'>$</text></svg>"/>
 <link rel="canonical" href="https://sellahotel.us/"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sellahotel.us/#org","name":"Sell A Hotel","url":"https://sellahotel.us/","email":"info@modern-hospitality-solutions.com","description":"Your sale price is not your payday — the capital stack gets paid first. See your net proceeds after the loan, any preferred equity, prepayment penalties, and costs, and whether selling beats refinancing.","parentOrganization":{"@type":"Organization","name":"Modern Hospitality Solutions"},"areaServed":"US"},{"@type":"WebSite","@id":"https://sellahotel.us/#website","name":"Sell A Hotel","url":"https://sellahotel.us/","publisher":{"@id":"https://sellahotel.us/#org"},"inLanguage":"en-US"},{"@type":"Service","name":"Sell A Hotel","serviceType":"Hotel sales & exits","provider":{"@id":"https://sellahotel.us/#org"},"areaServed":"US","description":"Your sale price is not your payday — the capital stack gets paid first. See your net proceeds after the loan, any preferred equity, prepayment penalties, and costs, and whether selling beats refinancing.","url":"https://sellahotel.us/"},{"@type":"FAQPage","@id":"https://sellahotel.us/#faq","mainEntity":[{"@type":"Question","name":"How much will I actually keep when I sell?","acceptedAnswer":{"@type":"Answer","text":"Roughly: value, minus the loan payoff, minus any preferred equity, minus prepayment or defeasance and sale costs. The diagnostic's waterfall shows exactly where your equity stands at a given value."}},{"@type":"Question","name":"What is a cap rate, and what's a good cap rate for a hotel?","acceptedAnswer":{"@type":"Answer","text":"A capitalization (cap) rate = NOI ÷ property value, and it's the main way income properties are valued: value = NOI ÷ cap rate. Hotel cap rates vary by market, segment, and cycle — often roughly 7–10% — and a lower cap rate implies a higher value. Example: $1,000,000 NOI at an 8.5% cap rate ≈ $11.8M value."}},{"@type":"Question","name":"How does my capital stack affect my proceeds?","acceptedAnswer":{"@type":"Answer","text":"Everyone ahead of you — senior lender, mezzanine, preferred equity — is paid in full before you see a dollar. The more layers and the thinner your cushion, the less you keep. The tool ranks the stack and shows your position."}},{"@type":"Question","name":"What if I owe more than it's worth?","acceptedAnswer":{"@type":"Answer","text":"Then your common equity is underwater and a straight sale may not cover the debt. A negotiated payoff, a recap, or holding and improving NOI first come into play — we can help you weigh them."}},{"@type":"Question","name":"Should I sell or refinance?","acceptedAnswer":{"@type":"Answer","text":"If the property comfortably supports its debt and you have cushion, refinancing keeps your upside. If there's a large refinance gap or you're thin, a clean sale can beat a forced refinance. The diagnostic quantifies both."}},{"@type":"Question","name":"Do prepayment penalties really matter?","acceptedAnswer":{"@type":"Answer","text":"They can be large on CMBS (defeasance) and some fixed-rate loans (yield maintenance), and they come straight out of your proceeds — factor them in before you assume a number."}}]}]}</script>
+
 <style>
 :root{--navy:#0e2a3b;--navy2:#143b52;--accent:#7a5ea8;--ink:#16242c;--muted:#5d7079;--line:#e6ebee;--bg:#f6f8f9;--card:#fff;--radius:14px}
 *{box-sizing:border-box}html,body{margin:0;padding:0}
@@ -57,10 +58,10 @@ details.faq .a{padding:14px 18px;color:var(--muted);font-size:15px}
 .calcform input{width:100%;max-width:340px;font-size:16px;padding:11px 13px;border:1px solid var(--line);border-radius:9px;font-family:inherit}
 .calcform input:focus{outline:0;border-color:var(--accent)}
 #calc{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.formula{font-family:Georgia,'Times New Roman',serif;font-size:18px;color:var(--navy);background:#f1f8f8;border:1px solid var(--line);border-radius:10px;padding:12px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.15}
-.frac>span:first-child{border-bottom:2px solid currentColor;padding:0 8px}
-.frac>span:last-child{padding:2px 8px}
+.formula{background:#f1f8f8;border:1px solid var(--line);border-radius:10px;padding:12px 18px;margin-bottom:12px;overflow-x:auto;color:var(--navy)}
+.formula .katex-display{margin:0}
+.formula .katex{font-size:1.25em}
+.formula .tex{font-family:Georgia,serif;font-size:17px}
 .minis{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 @media(max-width:760px){.minis{grid-template-columns:1fr}}
 .mini{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
@@ -96,7 +97,7 @@ footer .disc{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#
     <a class="btn primary" href="diagnostic.html">See what you'd keep</a>
     <a class="btn ghost" href="#contact">Talk to our brokerage team</a>
   </div>
-  <div class="trust">Free &middot; confidential &middot; the diagnostic runs in your browser — nothing is uploaded.</div>
+  <div class="trust">Our tools are safe and confidential by design. No hotel finance data is stored. Ever.</div>
 </div></div>
 
 
@@ -151,6 +152,8 @@ footer .disc{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#
   </div>
 </div></section>
 
+
+
 <footer><div class="wrap">
   <div class="cols">
     <div style="max-width:34ch"><div class="logo" style="color:#fff;margin-bottom:8px"><span><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="#13b3a6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="5" width="18" height="23" rx="1.5"/><line x1="4.5" y1="28" x2="27.5" y2="28"/><line x1="10.5" y1="8.7" x2="13" y2="8.7"/><line x1="19" y1="8.7" x2="21.5" y2="8.7"/></g><text x="16" y="22.5" text-anchor="middle" font-family="Georgia,serif" font-weight="bold" font-size="15" fill="#13b3a6">$</text></svg></span><span class="nm">Sell A Hotel</span></div>
@@ -175,6 +178,7 @@ footer .disc{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#
   });
 })();
 </script>
+
 
 
 </body></html>

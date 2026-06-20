@@ -160,7 +160,7 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
       <button data-mode="beginner">Guide me</button>
       <button data-mode="expert">Expert</button>
     </div>
-    <div class="privacy"><span class="dot"></span><span id="privacyLabel">Session-only · nothing leaves your browser</span></div>
+    <div class="privacy"><span class="dot"></span><span id="privacyLabel">Safe &amp; confidential · no data stored</span></div>
     <button class="btn ghost sm no-print" id="privacyBtn" style="color:#cfe3e3;border-color:rgba(255,255,255,.2)">Privacy</button>
   </div>
 </header>
@@ -678,7 +678,7 @@ function maybeLiveRefresh(){
 /* ---------- topbar ---------- */
 function syncTopbar(){
   document.querySelectorAll("#modeswitch button").forEach(function(b){b.classList.toggle("active",b.dataset.mode===S.mode);});
-  document.getElementById("privacyLabel").textContent = S.anon ? "Anonymous · session-only" : "Session-only · nothing leaves your browser";
+  document.getElementById("privacyLabel").textContent = S.anon ? "Anonymous · no data stored" : "Safe & confidential · no data stored";
 }
 
 /* ---------- landing ---------- */
@@ -693,7 +693,7 @@ function renderLanding(){
       '<button class="btn ghost" id="startGuide" style="color:#fff;border-color:rgba(255,255,255,.3)">Guide me</button>'+
       '<button class="btn ghost" id="startExpert" style="color:#fff;border-color:rgba(255,255,255,.3)">I have the numbers</button>'+
     '</div>'+
-    '<div class="trust">By Modern Hospitality Solutions · Skip any sensitive question · No property name required · Nothing leaves your browser.</div>'+
+    '<div class="trust">By Modern Hospitality Solutions · Our tools are safe and confidential by design — no hotel finance data is stored, ever.</div>'+
    '</div>');
   app.appendChild(hero);
   var pick=el('<div class="cards3"></div>');
@@ -1510,7 +1510,7 @@ function openPrivacy(){
   var root=document.getElementById("modalRoot"), saved=hasSaved();
   var bg=el('<div class="modal-bg"></div>'),mod=el('<div class="modal"></div>');
   mod.innerHTML='<h3 style="color:var(--navy)">Your privacy</h3>'+
-    '<p class="small">By default this tool runs <strong>only in your browser</strong>. Nothing you type is uploaded or sent anywhere, and nothing is used to train any model.</p>'+
+    '<p class="small"><strong>Our tools are safe and confidential by design — no hotel finance data is stored, ever.</strong> The diagnostic runs entirely in your browser; nothing you type is sent anywhere or used to train any model.</p>'+
     '<div class="checkrow"><input type="checkbox" id="anonChk" '+(S.anon?"checked":"")+'><label for="anonChk" class="small"><strong>Anonymous mode</strong> — don’t ask for or show a property name anywhere, including the memo.</label></div>'+
     '<div class="checkrow"><input type="checkbox" id="saveChk" '+(saved?"checked":"")+'><label for="saveChk" class="small"><strong>Save my progress on this browser</strong> (optional) — stores answers locally on this device only; never uploaded.</label></div>'+
     (S.anon?"":'<div class="field" style="margin-top:8px"><label class="small">Property name (optional, only used on the memo)</label><input type="text" id="propName" value="'+(S.propertyName||"")+'" placeholder="Leave blank to stay anonymous"></div>')+
