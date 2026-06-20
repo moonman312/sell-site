@@ -11,7 +11,7 @@
           "value": "hotelsforsales.com"
         }
       ],
-      "destination": "https://sellahotel.us/$1",
+      "destination": "https://sellahotel.us/$1?ref=hotelsforsales.com",
       "permanent": true
     },
     {
@@ -22,7 +22,7 @@
           "value": "hotel-selling.com"
         }
       ],
-      "destination": "https://sellahotel.us/$1",
+      "destination": "https://sellahotel.us/$1?ref=hotel-selling.com",
       "permanent": true
     }
   ],

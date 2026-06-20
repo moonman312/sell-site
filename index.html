@@ -101,13 +101,19 @@ footer .disc{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#
   <h2>Talk to our brokerage team</h2>
   <p class="lead">Considering a sale? We'll give you an honest read on value, your net proceeds, and timing.</p>
   <div class="contact">
-    <form id="cf" action="REPLACE_WITH_YOUR_APPS_SCRIPT_URL" method="POST">
+    <form id="cf" action="https://script.google.com/macros/s/AKfycbzVwuafSeN8DyLQ5Q7WytCHdT0EAp_XeiGbtnNzN3RjoVizWELEaQrR4kEgY1Xdh8kA/exec" method="POST">
       <div><label>Name</label><input name="name" required/></div>
       <div><label>Email</label><input type="email" name="email" required/></div>
       <div><label>Hotel name / location (optional)</label><input name="property"/></div>
       <div><label>What's going on?</label><textarea name="message" required></textarea></div>
       <input type="hidden" name="_subject" value="New inquiry — Sell A Hotel"/>
       <input type="hidden" name="source_site" value="sellahotel.us"/>
+      <input type="hidden" name="ref" id="cfRef" value=""/>
+      <input type="hidden" name="utm_source" id="utm_source" value=""/>
+      <input type="hidden" name="utm_medium" id="utm_medium" value=""/>
+      <input type="hidden" name="utm_campaign" id="utm_campaign" value=""/>
+      <input type="hidden" name="utm_term" id="utm_term" value=""/>
+      <input type="hidden" name="utm_content" id="utm_content" value=""/>
       <div><button class="btn primary" type="submit">Send</button></div>
       <div class="status" id="cfStatus"></div>
     </form>
@@ -127,6 +133,7 @@ footer .disc{border-top:1px solid rgba(255,255,255,.12);padding-top:16px;color:#
 <script>
 (function(){
   var f=document.getElementById('cf'),st=document.getElementById('cfStatus');
+  try{var _p=new URLSearchParams(location.search);var _keys={ref:'cfRef',utm_source:'utm_source',utm_medium:'utm_medium',utm_campaign:'utm_campaign',utm_term:'utm_term',utm_content:'utm_content'};Object.keys(_keys).forEach(function(k){var v=_p.get(k)||'';try{if(v)sessionStorage.setItem('mhs_'+k,v);else v=sessionStorage.getItem('mhs_'+k)||'';}catch(e){}var el=document.getElementById(_keys[k]);if(el)el.value=v;});}catch(e){}
   f.addEventListener('submit',async function(e){
     e.preventDefault();
     if(f.action.indexOf('REPLACE_WITH_YOUR_APPS_SCRIPT_URL')>-1){st.style.color='#b5642a';st.textContent='Form not connected yet — paste your Apps Script URL (see SETUP-contact-form.md).';return;}
